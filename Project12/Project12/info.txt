@@ -1,0 +1,6 @@
+Ploshcha priamokythnuka:4
+Perymetr priamokytnuka:8
+Ploshcha priamokythnuka:4
+Perymetr priamokytnuka:8
+Ploshcha kola:153.86
+Dovzhyna kola:43.96

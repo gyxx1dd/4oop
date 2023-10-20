@@ -13,10 +13,10 @@ private:
 	double plkola = 0;
 	float dovzkola = 0;
 public:
-	
+
 	Kolo()
 	{
-		
+
 
 	}
 
@@ -24,12 +24,12 @@ public:
 	{
 		cout << "Input radius" << endl;
 		cin >> radius;
-		
+
 	}
 
 	int GetPloshchaKola()
 	{
-		plkola = p * pow(radius,2);
+		plkola = p * pow(radius, 2);
 		return plkola;
 	}
 
@@ -37,8 +37,8 @@ public:
 	{
 		ofstream MyFile("info.txt", ios::app);
 		if (MyFile.is_open()) {
-			MyFile <<"Ploshcha kola:" << plkola << endl;
-			MyFile <<"Dovzhyna kola:" << dovzkola << endl;
+			MyFile << "Ploshcha kola:" << plkola << endl;
+			MyFile << "Dovzhyna kola:" << dovzkola << endl;
 			MyFile.close();
 			cout << "All info paste in 'info.txt'" << endl;
 		}
@@ -56,7 +56,7 @@ public:
 
 };
 
-class Priamokytnuk : public Kolo
+class Priamokytnuk
 {
 private:
 	int a;
@@ -64,9 +64,12 @@ private:
 	float perympriam = 0;
 	float plpriam = 0;
 public:
-	
+	Priamokytnuk()
+	{
 
-	Priamokytnuk(int a, int b) 
+	}
+
+	Priamokytnuk(int a, int b)
 	{
 		this->a = a;
 		this->b = b;
@@ -82,8 +85,8 @@ public:
 	{
 		ofstream MyFile("info.txt", ios::app);
 		if (MyFile.is_open()) {
-			MyFile <<"Ploshcha priamokythnuka:" << plpriam << endl;
-			MyFile <<"Perymetr priamokytnuka:" << perympriam << endl;
+			MyFile << "Ploshcha priamokythnuka:" << plpriam << endl;
+			MyFile << "Perymetr priamokytnuka:" << perympriam << endl;
 			MyFile.close();
 		}
 		else
@@ -98,12 +101,32 @@ public:
 		return perympriam;
 	}
 
-	void FullInfoKolo()
+	
+
+};
+
+class Derived:public Priamokytnuk, public Kolo
+{
+private:
+
+public:
+	Derived()
 	{
-		Kolo::GetPloshchaKola();
-		Kolo::DovzKola();
-		Kolo::OutPutInfo();
-		
+
 	}
+
+	int DerivedFunction()
+	{
+		Priamokytnuk a(2, 2);
+		a.GetPloshchaPriam();
+		a.PerymetrPriam();
+		a.OutPutInfo2();
+		Kolo b(2);
+		b.DovzKola();
+		b.GetPloshchaKola();
+		b.OutPutInfo();
+		return 1;
+	}
+
 
 };
