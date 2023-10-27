@@ -8,6 +8,7 @@
 
 int main()
 {
+
 	Derived obj;
 	obj.DerivedFunction();
 

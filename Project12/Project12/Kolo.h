@@ -87,6 +87,8 @@ private:
 public:
 	Derived()
 	{
+		Priamokytnuk(2, 2);
+		Kolo(2);
 
 	}
 
@@ -94,11 +96,10 @@ public:
 	{
 		ofstream MyFile("info.txt", ios::app);
 		if (MyFile.is_open()) {
-			Kolo kolo(2);
-			Priamokytnuk priamokytnuk(2, 2);
+			
 
-			kolo.OutputInfo(MyFile);
-			priamokytnuk.OutputInfo(MyFile);
+			Priamokytnuk::OutputInfo(MyFile);
+			Kolo::OutputInfo(MyFile);
 
 			MyFile.close();
 			cout << "All info pasted in 'info.txt'" << endl;
