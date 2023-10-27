@@ -1,9 +1,5 @@
 ﻿  Source.cpp
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(11,18): warning C4305: инициализация: усечение из "double" в "const float"
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(33,10): warning C4244: return: преобразование "double" в "int", возможна потеря данных
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(54,10): warning C4244: return: преобразование "float" в "int", возможна потеря данных
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(80,15): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(81,10): warning C4244: return: преобразование "float" в "int", возможна потеря данных
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(100,24): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(101,10): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(17,18): warning C4305: инициализация: усечение из "double" в "const float"
+C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(72,15): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(73,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   Project12.vcxproj -> C:\Users\skiv0\source\repos\Project12\x64\Debug\Project12.exe

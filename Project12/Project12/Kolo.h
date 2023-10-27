@@ -5,7 +5,13 @@
 
 using namespace std;
 
-class Kolo
+class InfoOutput {
+public:
+	virtual void OutputInfo(ofstream& file) {
+	}
+};
+
+class Kolo : public InfoOutput
 {
 private:
 	const float p = 3.14;
@@ -27,36 +33,21 @@ public:
 
 	}
 
-	int GetPloshchaKola()
-	{
-		plkola = p * pow(radius, 2);
-		return plkola;
-	}
+	
 
-	void OutPutInfo()
-	{
-		ofstream MyFile("info.txt", ios::app);
-		if (MyFile.is_open()) {
-			MyFile << "Ploshcha kola:" << plkola << endl;
-			MyFile << "Dovzhyna kola:" << dovzkola << endl;
-			MyFile.close();
-			cout << "All info paste in 'info.txt'" << endl;
-		}
-		else
-		{
-			cout << "Nety faila" << endl;
-		}
-	}
-
-	int DovzKola()
-	{
+	void OutputInfo(ofstream& file)  {
+		plkola = p * radius * radius;
 		dovzkola = 2 * p * radius;
-		return dovzkola;
+		file << "Kolo:" << endl;
+		file << "Ploshcha kola: " << plkola << endl;
+		file << "Dovzhyna kola: " << dovzkola << endl;
 	}
+
+	
 
 };
 
-class Priamokytnuk
+class Priamokytnuk : public InfoOutput
 {
 private:
 	int a;
@@ -75,30 +66,14 @@ public:
 		this->b = b;
 	}
 
-	int GetPloshchaPriam()
-	{
+	
+
+	void OutputInfo(ofstream& file) {
 		plpriam = a * b;
-		return plpriam;
-	}
-
-	void OutPutInfo2()
-	{
-		ofstream MyFile("info.txt", ios::app);
-		if (MyFile.is_open()) {
-			MyFile << "Ploshcha priamokythnuka:" << plpriam << endl;
-			MyFile << "Perymetr priamokytnuka:" << perympriam << endl;
-			MyFile.close();
-		}
-		else
-		{
-			cout << "Nety faila" << endl;
-		}
-	}
-
-	int PerymetrPriam()
-	{
-		perympriam = (a + b) * 2;
-		return perympriam;
+		perympriam = 2 * (a + b);
+		file << "Priamokytnuk:" << endl;
+		file << "Ploshcha priamokythnuka: " << plpriam << endl;
+		file << "Perymetr priamokytnuka: " << perympriam << endl;
 	}
 
 	
@@ -117,16 +92,21 @@ public:
 
 	int DerivedFunction()
 	{
-		Priamokytnuk a(2, 2);
-		a.GetPloshchaPriam();
-		a.PerymetrPriam();
-		a.OutPutInfo2();
-		Kolo b(2);
-		b.DovzKola();
-		b.GetPloshchaKola();
-		b.OutPutInfo();
+		ofstream MyFile("info.txt", ios::app);
+		if (MyFile.is_open()) {
+			Kolo kolo(2);
+			Priamokytnuk priamokytnuk(2, 2);
+
+			kolo.OutputInfo(MyFile);
+			priamokytnuk.OutputInfo(MyFile);
+
+			MyFile.close();
+			cout << "All info pasted in 'info.txt'" << endl;
+		}
+		else {
+			cout << "Nety faila" << endl;
+		}
+		
 		return 1;
 	}
-
-
 };
