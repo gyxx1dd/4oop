@@ -1,4 +1,5 @@
 #pragma once
+#include <assert.h>
 #include <math.h>
 #include <fstream>
 #include <iostream>
@@ -28,9 +29,7 @@ public:
 
 	Kolo(int a)
 	{
-		cout << "Input radius" << endl;
-		cin >> radius;
-
+		radius = a;
 	}
 
 	
@@ -83,12 +82,16 @@ public:
 class Derived:public Priamokytnuk, public Kolo
 {
 private:
-
+	int w;
+	int h;
+	int x = 0;
+	int y = 0;
 public:
-	Derived()
+
+	Derived(int w, int h) : Kolo(w),Priamokytnuk(w, h)
 	{
-		Priamokytnuk(2, 2);
-		Kolo(2);
+		this->w = w;
+		this->h = h;
 
 	}
 
@@ -100,6 +103,7 @@ public:
 
 			Priamokytnuk::OutputInfo(MyFile);
 			Kolo::OutputInfo(MyFile);
+
 
 			MyFile.close();
 			cout << "All info pasted in 'info.txt'" << endl;

@@ -9,7 +9,7 @@
 int main()
 {
 
-	Derived obj;
+	Derived obj(5,6);
 	obj.DerivedFunction();
 
 

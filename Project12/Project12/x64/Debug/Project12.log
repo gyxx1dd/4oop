@@ -1,5 +1,5 @@
 ﻿  Source.cpp
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(17,18): warning C4305: инициализация: усечение из "double" в "const float"
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(72,15): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(73,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(18,18): warning C4305: инициализация: усечение из "double" в "const float"
+C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(71,15): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\skiv0\source\repos\Project12\Project12\Kolo.h(72,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
   Project12.vcxproj -> C:\Users\skiv0\source\repos\Project12\x64\Debug\Project12.exe
